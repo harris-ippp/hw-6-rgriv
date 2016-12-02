@@ -21,6 +21,7 @@ df = pd.concat(df_list)
 df["Republican Share"] = df["Republican"] / df["Total Votes Cast"]
 
 def county_plot(county_name):
+    ### The following line is too long. Use \ to break lines
     df.ix[county_name + " County", ["Year", "Republican Share"]].sort(["Year"], ascending = True).plot(x = "Year", y = "Republican Share")
     plt.savefig(county_name.lower() + '.png')
 
